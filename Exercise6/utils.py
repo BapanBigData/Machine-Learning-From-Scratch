@@ -6,6 +6,26 @@ import numpy as np
 from scipy.io import loadmat
 from os.path import join
 from matplotlib import pyplot
+import matplotlib.pyplot as plt
+
+
+# Plot the cost over iterations
+def plot_loss_over_iterations(n_iterations, losses):
+    """
+    Plots the loss function over iterations.
+
+    Parameters:
+    n_iterations (int): Number of iterations.
+    loss (list or array-like): Cost values corresponding to each iteration.
+    """
+    plt.figure(figsize=(6, 4))
+    plt.plot(range(n_iterations), losses, linewidth=2, color='b')
+    plt.xlabel('Iterations', fontsize=10)
+    plt.ylabel('Loss', fontsize=10)
+    plt.title('Loss Over Iterations', fontsize=12)
+    plt.grid(True, which='both', linestyle='--', linewidth=0.5)
+    plt.tight_layout()
+    plt.show()
 
 
 def plotData(X, y, grid=False):
